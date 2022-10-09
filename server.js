@@ -1,18 +1,3 @@
-const http = require('http');
-
-const hostname = '127.0.0.1';
-const port = 3000;
-
-const server = http.createServer(function (req, res) {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', '.ejs');
-    res.end('Hello World\n');
-});
-
-server.listen(port, hostname, function () {
-    console.log('Server running at http://' + hostname + ':' + port + '/');
-});
-
 var express = require('express');
 var app = express();
 
@@ -31,5 +16,17 @@ app.get('/about', function (req, res) {
     res.render('pages/about');
 });
 
-app.listen(8080);
-console.log('Server is listening on port 8080');
+app.get('/contactme', function (req, res) {
+    res.render('pages/contactme');
+});
+
+app.get('/services', function (req, res) {
+    res.render('pages/services');
+});
+
+app.get('/project', function (req, res) {
+    res.render('pages/project');
+});
+
+app.listen(4000);
+console.log('Server is listening on port 4000');
