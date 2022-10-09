@@ -28,13 +28,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rrokad/Assignment1.git"
+    "url": "https://github.com/rrokad/Assignment1.git"
   },
   "author": "Rushi Rokad",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rrokad/Assignment1/issues"
+    "url": "https://git.heroku.com/assignment1-301230471.git"
   },
-  "homepage": "https://comp229-portfolio22.herokuapp.com/",
+  "homepage": "https://assignment01webdevelopment.herokuapp.com/",
   "keywords": []
 }
