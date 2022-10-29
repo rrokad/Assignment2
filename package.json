@@ -1,40 +1,29 @@
 {
-  "name": "assignment1",
-  "version": "0.0.1",
-  "description": "Assignment 1 of Node Js and EJS",
-  "main": "server.js",
+  "name": "comp229.005.assignment1",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node server.js"
-  },
-  "engines": {
-    "node": "^12.18.3",
-    "npm": "^6.0.0"
+    "start": "node ./server.js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.14.0",
-    "bootstrap": "^4.5.2",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^5.1.1",
+    "compression": "^1.7.4",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "express-generator": "^4.16.1",
+    "ejs": "^3.1.8",
+    "express": "~4.16.1",
+    "express-session": "^1.17.2",
     "http-errors": "~1.6.3",
-    "jquery": "^3.5.1",
+    "jquery": "^3.6.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.0.8",
     "morgan": "~1.9.1",
-    "node": "^18.10.0",
+    "node": "^19.0.0",
     "nodemon": "^2.0.20",
-    "popper.js": "^1.16.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rrokad/Assignment1.git"
-  },
-  "author": "Rushi Rokad",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://git.heroku.com/assignment1-301230471.git"
-  },
-  "homepage": "https://assignment01webdevelopment.herokuapp.com/",
-  "keywords": []
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
+  }
 }

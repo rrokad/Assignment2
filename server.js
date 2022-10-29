@@ -1,35 +1,94 @@
-// Student Name : RUshi Rokad
-// Id:  301230471
+#!/usr/bin/env node
 
-var express = require('express');
-var app = express();
+/**
+ * Module dependencies.
+ */
 
-// set the view engine to ejs
-app.set('view engine', 'ejs');
+var configDB = require('./config/db');
+var app = require('./config/app');
+var debug = require('debug')('comp229.003.m2022:server');
+var http = require('http');
+const configurePassport = require('./config/passport');
 
-// use res.render to load up an ejs view file
+/**
+ * Get port from environment and store in Express.
+ */
 
-// index page
-app.get('/', function (req, res) {
-    res.render('pages/index');
-});
+var db = configDB();
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
 
-// about page
-app.get('/about', function (req, res) {
-    res.render('pages/about');
-});
+/**
+ * Create HTTP server.
+ */
 
-app.get('/contactme', function (req, res) {
-    res.render('pages/contactme');
-});
+var server = http.createServer(app);
 
-app.get('/services', function (req, res) {
-    res.render('pages/services');
-});
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+const passport = configurePassport();
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
 
-app.get('/project', function (req, res) {
-    res.render('pages/project');
-});
+/**
+ * Normalize a port into a number, string, or false.
+ */
 
-app.listen(4000);
-console.log('Server is listening on port 4000');
+function normalizePort(val) {
+    var port = parseInt(val, 10);
+
+    if (isNaN(port)) {
+        // named pipe
+        return val;
+    }
+
+    if (port >= 0) {
+        // port number
+        return port;
+    }
+
+    return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
+
+    var bind = typeof port === 'string'
+        ? 'Pipe ' + port
+        : 'Port ' + port;
+
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges');
+            process.exit(1);
+            break;
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use');
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+    var addr = server.address();
+    var bind = typeof addr === 'string'
+        ? 'pipe ' + addr
+        : 'port ' + addr.port;
+    debug('Listening on ' + bind);
+    console.log(`Express app running on http://localhost:${port}`)
+}
