@@ -4,19 +4,14 @@ let mongoose = require('mongoose');
 // Create a model class
 let ContactModel = mongoose.Schema(
     {
-        item: String,
-        qty: Number,
-        tags: [],
-        status: String,
-        size: {
-            h: Number,
-            w: Number,
-            uom: String
-        }
+        id: Number,
+        name: String,
+        email: String,
+        phone: String,
     },
     {
         collection: "users"
     }
 );
 
-module.exports = mongoose.model("Inventory", ContactModel);
+module.exports = mongoose.model("Contact", ContactModel);
