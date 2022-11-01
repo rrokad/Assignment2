@@ -51,6 +51,25 @@ body {
     margin-top: 2%;
 }
 
+#images {
+    margin-left: 12%;
+    margin-top: 7%;
+    margin-right: auto;
+    float: left;
+    height: 300px;
+    width: 300px
+}
+
+#div_images::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#fig_caption {
+    
+}
+
 .footer {
     position: absolute;
     bottom: 0;

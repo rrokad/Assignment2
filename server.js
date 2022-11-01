@@ -3,7 +3,7 @@
 //     Student Id : 301230471
 //     Date : 28th Oct, 2022
 
-#!/usr/bin/env node
+//!/usr/bin/env node
 
 /**
  * Module dependencies.
