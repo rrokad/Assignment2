@@ -17,6 +17,26 @@ module.exports.contactList = function (req, res, next) {
     });
 }
 
+module.exports.details = (req, res, next) => {
+
+    let id = req.params.id;
+
+    ContactModel.findById(id, (err, contactToShow) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            //show the edit view
+            res.render('contact/details', {
+                title: 'Contact Details',
+                contact: contactToShow
+            })
+        }
+    });
+}
+
+
 module.exports.displayEditPage = (req, res, next) => {
 
     let id = req.params.id;
